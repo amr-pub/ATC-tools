@@ -1,3 +1,6 @@
 [submodule "ATCvet"]
 	path = ATCvet
 	url = https://github.com/amr-pub/ATCvet-index
+[submodule "ATC"]
+	path = ATC
+	url = https://github.com/amr-pub/ATC-index
