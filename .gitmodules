@@ -1,0 +1,3 @@
+[submodule "ATCvet"]
+	path = ATCvet
+	url = https://github.com/amr-pub/ATCvet-index
