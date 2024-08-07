@@ -1,2 +1,6 @@
 ^ATCtools\.Rproj$
 ^\.Rproj\.user$
+^scrape$
+^ATC$
+^ATCvet$
+^LICENSE\.md$
