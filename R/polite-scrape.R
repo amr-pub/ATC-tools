@@ -2,9 +2,7 @@
 #'
 #' @param lhs legt hand side
 #' @param rhs right hand side
-#' @examples
-#' a %otherwise% b
-#'
+
 `%otherwise%` <- function(lhs, rhs) {
   if (!is.null(lhs) && length(lhs) > 0) lhs else rhs
 }
@@ -15,7 +13,7 @@
 #' @param user_agent user agent string
 #' @param delay default delay
 #' @param verbose logical
-#' @examples
+
 polite_fetch_rtxt <- memoise::memoise(function(..., user_agent, delay, verbose){
   rt <- robotstxt::robotstxt(...)
   delay_df <- rt$crawl_delay
@@ -39,10 +37,7 @@ polite_fetch_rtxt <- memoise::memoise(function(..., user_agent, delay, verbose){
 #' @param user_agent user agent string
 #' @param force force re-downloading of robots.xtx
 #' @param verbose logical
-#'
-#' @return
-#'
-#' @examples
+
 check_rtxt <-function(url, delay, user_agent, force, verbose){
   url_parsed <- httr::parse_url(url)
   host_url <- paste0(url_parsed$scheme, "://", url_parsed$hostname)
@@ -65,10 +60,7 @@ check_rtxt <-function(url, delay, user_agent, force, verbose){
 #' @param user_agent user agent string. Default value `paste0("polite ", getOption("HTTPUserAgent"), "bot")`
 #' @param force force re-download of robots.txt
 #' @param verbose default FALSE
-#'
-#' @return
-#'
-#' @examples
+
 polite_read_html <- memoise::memoise(
                    function(url, ...,
                    delay = 5,
@@ -92,10 +84,7 @@ polite_read_html <- memoise::memoise(
 #' Guess filename for download from url
 #'
 #' @param x url to guess filename from
-#'
-#' @return
-#'
-#' @examples
+
 guess_basename <- function(x) {
   destfile <- basename(x)
   if(tools::file_ext(destfile)==""){
@@ -122,10 +111,7 @@ guess_basename <- function(x) {
 #' @param force force re-download of robots.txt
 #' @param overwrite overwrite downloaded file. Default value FALSE
 #' @param verbose default value is FALSE
-#'
-#' @return
-#'
-#' @examples
+
 polite_download_file <- memoise::memoise(
                         function(url, destfile=guess_basename(url), ...,
                              quiet=!verbose, mode = "wb", path="downloads/",
